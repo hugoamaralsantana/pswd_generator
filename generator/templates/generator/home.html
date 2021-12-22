@@ -1,33 +1,119 @@
-<link
-  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-  rel="stylesheet"
-  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-  crossorigin="anonymous"
-/>
-
-<div class="container-fluid text-center">
-  <h1>PASSWORD GENERATOR</h1>
-
-  <form action="{% url 'password' %}">
-    <select name="length">
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
-      <option value="11">11</option>
-      <option value="12" selected="selected">12</option>
-      <option value="13">13</option>
-      <option value="14">14</option>
-    </select>
-    <br />
-    <input type="checkbox" name="uppercase" /> Uppercase
-    <br />
-    <input type="checkbox" name="numbers" /> Numbers
-    <br />
-    <input type="checkbox" name="special" /> Special Characters
-    <br />
-    <input type="submit" value="Generate Password" />
-  </form>
-  <br />
-</div>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generated Password</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <link
+      rel="icon"
+      href="https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/key-icon.png"
+    />
+  </head>
+  <body>
+    <button
+      style="margin: 10px"
+      class="btn"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#aboutMeTab"
+      aria-controls="aboutMeTab"
+      aria-expanded="false"
+      aria-label="Toggle About Me Modal"
+    >
+      <i class="bi bi-list" style="font-size: 2rem"></i>
+    </button>
+    <div class="container-fluid text-center">
+      <br />
+      <h1>PASSWORD GENERATOR</h1>
+      <br />
+      <form action="{% url 'password' %}">
+        <select name="length">
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12" selected="selected">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+        </select>
+        Length
+        <br />
+        <input type="checkbox" name="uppercase" /> Uppercase
+        <br />
+        <input type="checkbox" name="numbers" /> Numbers
+        <br />
+        <input type="checkbox" name="special" /> Special Characters
+        <br />
+        <br />
+        <input
+          type="submit"
+          value="Generate Password"
+          class="btn btn-primary"
+        />
+      </form>
+      <br />
+    </div>
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="aboutMeTab"
+      aria-labelledby="aboutMeTabLabel"
+    >
+      <div class="offcanvas-header">
+        <h2
+          class="offcanvas-title display-1"
+          id="aboutMeTabLabel"
+          style="font-size: 50px"
+        >
+          About Me
+        </h2>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+          style="margin-right: 10px"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <img
+          src="https://i.ibb.co/J3g7QbD/Processed-with-VSCO-with-1-preset.jpg"
+          class="rounded-circle mx-auto d-block"
+          style="width: 60%; height: auto"
+          alt="The most beatiful Web-Developer to walk the Earth"
+        />
+        <br />
+        <p class="lead">
+          <strong style="font-size: 2rem">Web Developer </strong>
+          based in Boston, Massachusetts. Well-experienced in Front-End Vue.js,
+          Full-Stack Django, and SQL Database Development. I also have
+          experience working with Node.js, ExpressJS, and React, however I don't
+          consider them to be my web development primaries.
+        </p>
+        <br />
+        <p>
+          I am currently working on developing small projects like this one to
+          further hone my skills with Django, Vue.js, and SQL.
+        </p>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+</html>
